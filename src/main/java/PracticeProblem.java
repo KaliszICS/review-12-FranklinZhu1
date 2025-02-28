@@ -23,6 +23,7 @@ public class PracticeProblem {
 	}
 
 	public static int countWords(String s, char c) {
+		/*
 		s = s.strip();
 		int count = 0;
 		for (int i = 0; i < s.length(); ++i) {
@@ -32,6 +33,16 @@ public class PracticeProblem {
 				while (i < s.length() && s.charAt(i) == ' ') ++i; // jump to next word
 				--i; // to account for the for loop increment
 			}
+		}
+		return count;
+		*/
+
+		// forgot about split method
+
+		int count = 0;
+		String[] words = s.split("\\s+");
+		for (int i = 0; i < words.length; ++i) {
+			if (words[i].indexOf(c) != -1) ++count;
 		}
 		return count;
 	}
